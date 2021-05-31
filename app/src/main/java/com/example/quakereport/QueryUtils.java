@@ -51,7 +51,7 @@ public final class QueryUtils {
         // is formatted, a JSONException exception object will be thrown.
         // Catch the exception so the app doesn't crash, and print the error message to the logs.
         try {
-            
+
             // build up a list of Earthquake objects with the corresponding data.
             JSONObject root = new JSONObject(SAMPLE_JSON_RESPONSE);
             JSONArray features = root.getJSONArray("features");
