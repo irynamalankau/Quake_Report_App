@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.lang.reflect.Array;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -49,7 +50,15 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
         return timeFormat.format(dateObject);
     }
-    // Returns array of strings that contains location primary and location offset for the current earthquake
+
+    //Return formatted into string magnitude
+    private String formatMagnitude(Earthquake earthquake){
+        DecimalFormat formatter = new DecimalFormat("0.0");
+        String formattedMagnitude = formatter.format(earthquake.getMagnitude());
+        return formattedMagnitude;
+    }
+
+    // Return array of strings that contains location primary and location offset for the current earthquake
     private String[] formatLocation(String location){
         String[] locationArray = new String[2];
         String locationPrimary, locationOffset;
@@ -83,7 +92,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         }
 
         public void bindPlace(Earthquake currentEarthquake) {
-            mMagnitude.setText(currentEarthquake.getMagnitude());
+            mMagnitude.setText(formatMagnitude(currentEarthquake));
             String location = currentEarthquake.getLocation();
 
             String[] formattedLocationArray = formatLocation(location);
@@ -110,4 +119,5 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             return super.toString();
         }
     }
+
 }

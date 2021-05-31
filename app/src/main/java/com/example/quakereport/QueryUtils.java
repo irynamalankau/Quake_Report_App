@@ -59,7 +59,7 @@ public final class QueryUtils {
             for ( int index = 0; index < 10; index++){
                 JSONObject feature = features.getJSONObject(index);
                 JSONObject properties = feature.getJSONObject("properties");
-                earthquakes.add(new Earthquake(properties.getString("mag"), properties.getString("place"), properties.getLong("time") ));
+                earthquakes.add(new Earthquake(properties.getDouble("mag"), properties.getString("place"), properties.getLong("time") ));
             }
 
         } catch (JSONException e) {

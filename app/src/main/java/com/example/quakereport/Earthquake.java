@@ -2,17 +2,17 @@ package com.example.quakereport;
 
 public class Earthquake {
 
-    private String mMagnitude;
+    private double mMagnitude;
     private String mLocation;
     private long mTime;
 
-    public Earthquake(String  magnitude, String location, long time) {
+    public Earthquake(double  magnitude, String location, long time) {
         mMagnitude = magnitude;
         mLocation = location;
         mTime = time;
     }
 
-    public String getMagnitude() {
+    public double getMagnitude() {
         return mMagnitude;
     }
 
