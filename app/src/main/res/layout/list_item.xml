@@ -12,17 +12,21 @@
 
         <TextView
             android:id="@+id/magnitude"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/magnitude_circle"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            tools:text="8.9"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="7.1" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/location_offset"
@@ -30,6 +34,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="12sp"
+            android:textAllCaps="true"
             app:layout_constraintBottom_toTopOf="@+id/location_primary"
             app:layout_constraintStart_toEndOf="@+id/magnitude"
             app:layout_constraintTop_toTopOf="@+id/magnitude"
@@ -40,6 +47,7 @@
             android:id="@+id/location_primary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/textColorEarthquakeLocation"
             app:layout_constraintBottom_toBottomOf="@+id/magnitude"
             app:layout_constraintStart_toStartOf="@+id/location_offset"
             app:layout_constraintTop_toBottomOf="@+id/location_offset"
@@ -49,12 +57,13 @@
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@+id/time"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/location_offset"
             app:layout_constraintVertical_chainStyle="packed"
             tools:text="Feb 2, 2016" />
 
@@ -64,6 +73,9 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/location_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/date"
             tools:text="3:00 PM" />
